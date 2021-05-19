@@ -1,3 +1,7 @@
+name: build
+
+on: [push]
+
 jobs:
   build:
     runs-on: windows-latest
@@ -7,6 +11,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-          architecture: 'x86' # optional, x64 or x86. If not specified, x64 will be used by default
+          architecture: 'x86'
       - run: npm install
       - run: npm run build
